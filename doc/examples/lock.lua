@@ -20,7 +20,7 @@ local lock = {
    l_len = 0;              -- Lock whole file
 }
 
-if M.fcntl(fd, M.F_SETLK, lock) == -1 then
+if M.fcntl(fd, M.F_SETLK, lock) == nil then
    error('file locked by another process')
 end
 
